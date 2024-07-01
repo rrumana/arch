@@ -7,7 +7,7 @@ My laptop it terribly unstable and so this repo is mainly for me to document my 
 photos, dotfiles, and install script hopefully on the way
 
 fastfetch cause why not
-'''
+```
 
                   -`                     ┌─────────── Hardware Information ───────────┐
                  .o+`                      󰌢  82UG (Legion S7 16ARHA7)
@@ -29,4 +29,4 @@ fastfetch cause why not
 `++:.                           `-/+/      󰏖  1065 (pacman)
 .`                                 `/      󰅐  32 mins
                                          └────────────────────────────────────────────┘
-'''
+```
