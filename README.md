@@ -12,6 +12,16 @@ I am currently working on removing all KDE applications from my stack and replac
 
 photos, dotfiles, and install script hopefully on the way
 
+Currently just fastfetch is up, here is a list of programs I need to finish, document, and upload:
+ - [ ] Hyprland as window manager (wayland)
+ - [ ] Alacritty as terminal (Rust)
+ - [ ] Wallust as theme manager (Rust)
+ - [ ] Waybar as status bar
+ - [ ] Neovim as text editor
+ - [ ] more...
+
+I also will be adding my keybinds for everything in one file (for my reference and yours)
+
 fastfetch cause why not
 ```
 
