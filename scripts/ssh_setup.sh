@@ -85,5 +85,5 @@ eval "$(ssh-agent -s)"
 # This is probably poor form and insecure but I'm lazy
 ssh-add ~/.ssh/github
 
-msg "${RED}Read parameters:${NOFORMAT}"
-msg "- arguments: ${args[*]-}"
+# msg "${RED}Read parameters:${NOFORMAT}"
+# msg "- arguments: ${args[*]-}"
