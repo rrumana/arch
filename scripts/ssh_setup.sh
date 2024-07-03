@@ -12,7 +12,7 @@ Usage: $(basename "${BASH_SOURCE[0]}") [-h] [-v] [-f] -p param_value arg1 [arg2.
 This is just an overkill script template for starting my wireguard vpn instance.
 It literaly saves me like 3 seconds
 
-Since this script will be called automatically on startup, it makes sense to have sophisticated error handling and logging.
+Since this script will be called automatically when opening every terminal window, it is just a basic quality of life thing
 
 
 Available options:

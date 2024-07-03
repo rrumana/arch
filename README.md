@@ -2,7 +2,7 @@
 
 A repository containing everything related to my personal Arch setup
 
-My laptop it terribly unstable and so this repo is mainly for me to document my setup as it evolves and make install scripts so that when I eventually have to reinstall everything it goes much quicker.
+My laptop it terribly unstable (Curse you Lenovo) so this repo is mainly for me to document my setup as it evolves and make install scripts so that when I eventually have to reinstall everything it goes much quicker.
 
 My theme colors will be based on Tokyo night
 I am enjoying Noto Sans Mono but I might change that as well
