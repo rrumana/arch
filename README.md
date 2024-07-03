@@ -4,6 +4,11 @@ A repository containing everything related to my personal Arch setup
 
 My laptop it terribly unstable and so this repo is mainly for me to document my setup as it evolves and make install scripts so that when I eventually have to reinstall everything it goes much quicker.
 
+My theme colors will be based on Tokyo night
+I am enjoying Noto Sans Mono but I might change that as well
+
+I am currently working on removing all KDE applications from my stack and replacing them with lighter and more configurable alternatives. No hate just searching for a more custom look and feel
+
 photos, dotfiles, and install script hopefully on the way
 
 fastfetch cause why not
