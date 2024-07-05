@@ -18,11 +18,11 @@ Leader key is 'Space'
 <leader>x       - Clipboard cut 	(normal and visual)
 <leader>c       - Clipboard copy	(normal and visual)
 <leader>v       - Clipboard paste	(normal and visual)
-<Ctrl-x>        - Delete		    (normal and visual)
-<Ctrl-c> 	- Yank              (normal and visual)
-<Ctrl-v> 	    - Put               (normal, insert, and visual)
-<Ctrl-r>	    - Redo              (normal and visual)
-<Ctrl-z> 	    - Undo              (normal and visual)
+<Ctrl-x>        - Delete		(normal and visual)
+<Ctrl-c> 	- Yank                (normal and visual)
+<Ctrl-v> 	- Put                 (normal, insert, and visual)
+<Ctrl-r>	- Redo                (normal and visual)
+<Ctrl-z> 	- Undo                (normal and visual)
 ```
 
 # Vim
