@@ -10,7 +10,7 @@ Leader key is 'Super' (Command on Mac or Windows Key)
 Leader key is 'Space'
 
 <code>&nbsp;
-<leader>pv      - Filetree
+\<leader\>pv      - Filetree
 <leader>pf      - Preview files
 <leader>ps      - Search files      (Grep)
 <Ctrl-p>        - Github search     (only works in github directory)
@@ -20,9 +20,9 @@ Leader key is 'Space'
 <leader>v       - Clipboard paste	(normal and visual)
 <Ctrl-x>        - Delete		    (normal and visual)
 <Ctrl-c> 	    - Yank              (normal and visual)
-<Ctrl-v> 	    - Put               (normal, insert, and visual)
-<Ctrl-r>	    - Redo              (normal and visual)
-<Ctrl-z> 	    - Undo              (normal and visual)
+\<Ctrl-v\> 	    - Put               (normal, insert, and visual)
+\<Ctrl-r\>	    - Redo              (normal and visual)
+\<Ctrl-z\> 	    - Undo              (normal and visual)
 </code>
 
 # Vim
