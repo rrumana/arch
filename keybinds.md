@@ -1,24 +1,21 @@
 # This is where my keybinds will go
 
-This system is a work in progress
-
-I am currently using hyprland and neovim, so expect many keybinds.
-
+This system is a work in progress. I am currently using Hyprland, Tmux, Neovim, so expect many keybinds.
 keybinds will be applied through the appropriate dotfiles, this is just a reference document.
 
-## Hyprland
-Leader key is 'Command''
+# Hyprland
+Leader key is 'Super' (Command on Mac or Windows Key)
 
 ## Neovim
 Leader key is 'Space'
 
 # Harpoon
-<leader>a  - Harpoon mark	(normal only)
-<C-e> 	   - Harpoon UI		(normal only)
-<C-h> 	   - Harpoon 1		(normal only)
-<C-j> 	   - Harpoon 2		(normal only)
-<C-k> 	   - Harpoon 3		(normal only)
-<C-l> 	   - Harpoon 4		(normal only)
+Leader + a      - Harpoon mark	(normal only)
+Ctrl + e        - Harpoon UI	(normal only)
+Ctrl + h 	    - Harpoon 1		(normal only)
+Ctrl + j 	    - Harpoon 2		(normal only)
+Ctrl + k 	    - Harpoon 3		(normal only)
+Ctrl + l 	    - Harpoon 4		(normal only)
 
 
 ## Tmux
