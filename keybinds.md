@@ -12,5 +12,8 @@ keybinds will be applied through the appropriate dotfiles, this is just a refere
 ## Neovim
 
 
+## Tmux
+
+
 ## Other
 
