@@ -4,24 +4,24 @@ This system is a work in progress. I am currently using Hyprland, Tmux, Neovim, 
 Keybinds will be applied through the appropriate dotfiles, this is just a reference document.
 
 # Hyprland
-Leader key is 'Super' (Command on Mac or Windows Key)
+Leader key is 'Super' (Command on Mac or Windows Key)\
 
 ## Neovim
-Leader key is 'Space'
+Leader key is 'Space'\
 
-<leader>pv - Filetree
-<leader>pf - Preview files
-<leader>ps - Search files 	(Grep)
-<C-p> 	   - Github search 	(only works in github directory)
+<leader>pv  - Filetree\
+<leader>pf  - Preview files\
+<leader>ps  - Search files 	    (Grep)\
+<Ctrl-p> 	- Github search 	(only works in github directory)\
 
-<leader>x  - Clipboard cut 	    (normal and visual)
-<leader>c  - Clipboard copy	    (normal and visual)
-<leader>v  - Clipboard paste	  (normal and visual)
-<C-x> 	   - Delete		          (normal and visual)
-<C-c> 	   - Yank		            (normal and visual)
-<C-v> 	   - Put		            (normal, insert, and visual)
-<C-r>	     - Redo		            (normal and visual)
-<C-z> 	   - Undo		            (normal and visual)
+<leader>x   - Clipboard cut 	(normal and visual)\
+<leader>c   - Clipboard copy	(normal and visual)\
+<leader>v   - Clipboard paste	(normal and visual)\
+<Ctrl-x> 	- Delete		    (normal and visual)\
+<Ctrl-c> 	- Yank		        (normal and visual)\
+<Ctrl-v> 	- Put		        (normal, insert, and visual)\
+<Ctrl-r>	- Redo		        (normal and visual)\
+<Ctrl-z> 	- Undo		        (normal and visual)\
 
 # Vim
 [Operator] [Count] [Motion]
@@ -36,9 +36,9 @@ O   - Create a line above and go into insert mode
 o   - Create a line below and go into insert mode
 
 # Netrw
-n  	   - Create new file
-d  	   - Create directory
-r 	   - Rename a file
+n  	   - Create new file\
+d  	   - Create directory\
+r 	   - Rename a file\
 
 # Harpoon
 Leader + a      - Harpoon mark	(normal only)\
