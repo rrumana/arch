@@ -17,8 +17,9 @@ Currently just fastfetch is up, here is a list of programs I need to finish, doc
  - [ ] Alacritty as terminal (Rust)
  - [ ] Wallust as theme manager (Rust)
  - [ ] Waybar as status bar
- - [ ] Neovim as text editor
  - [ ] more...
+
+I use Neovim as my text editor and I have a separate repo for that [here](https://github.com/rrumana/Neovim) 
 
 I also will be adding my keybinds for everything in one file (for my reference and yours)
 
