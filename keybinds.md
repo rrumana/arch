@@ -28,6 +28,7 @@ Leader key is 'Space'
 # Vim
 [Operator] [Count] [Motion]
 
+```
 I   - navigate to start of line and go into insert mode
 w 	- Until the start of the next word, Excluding the first character.
 e 	- To the end of the current word, Including the last character.
@@ -36,6 +37,7 @@ b   - jump backwards to the start of a word
 B   - jump backwards to the start of a line   
 O   - Create a line above and go into insert mode
 o   - Create a line below and go into insert mode
+```
 
 # Netrw
 n  	   - Create new file\
