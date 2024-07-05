@@ -9,25 +9,6 @@ Leader key is 'Super' (Command on Mac or Windows Key)
 ## Neovim
 Leader key is 'Space'
 
-# Harpoon
-Leader + a      - Harpoon mark	(normal only)\
-Ctrl + e        - Harpoon UI	(normal only)\
-Ctrl + h 	    - Harpoon 1		(normal only)\
-Ctrl + j 	    - Harpoon 2		(normal only)\
-Ctrl + k 	    - Harpoon 3		(normal only)\
-Ctrl + l 	    - Harpoon 4		(normal only)\
-
-
-## Tmux
-Leader key is 'Ctrl + s'
-
-## Other
-New bindings:
--------------------------------
-Note: Change end of line keybinding away from $
-
-NeoVim
---------------------------
 <leader>pv - Filetree
 <leader>pf - Preview files
 <leader>ps - Search files 	(Grep)
@@ -42,60 +23,33 @@ NeoVim
 <C-r>	     - Redo		            (normal and visual)
 <C-z> 	   - Undo		            (normal and visual)
 
-<leader>a  - Harpoon mark	(normal only)
-<C-e> 	   - Harpoon UI		(normal only)
-<C-h> 	   - Harpoon 1		(normal only)
-<C-j> 	   - Harpoon 2		(normal only)
-<C-k> 	   - Harpoon 3		(normal only)
-<C-l> 	   - Harpoon 4		(normal only)
+# Vim
+[Operator] [Count] [Motion]
 
+I   - navigate to start of line and go into insert mode
+w 	- Until the start of the next word, Excluding the first character.
+e 	- To the end of the current word, Including the last character.
+E 	- To the end of the line, Including the last character.
+b   - jump backwards to the start of a word 
+B   - jump backwards to the start of a line   
+O   - Create a line above and go into insert mode
+o   - Create a line below and go into insert mode
 
-Netrw
---------------------------
+# Netrw
 n  	   - Create new file
 d  	   - Create directory
 r 	   - Rename a file
 
-
-Vim
---------------------------
-[Operator] [Count] [Motion]
-
-<C-w>	- Switch Tab
-<Esc>	- Escape (usually to normal mode)
-
-  : 	- Command Start
- :q!	- Quit discard changes
- :wq	- Quit and save changes
- :qa!	- Close all buffers
+# Harpoon
+Leader + a      - Harpoon mark	(normal only)\
+Ctrl + e        - Harpoon UI	(normal only)\
+Ctrl + h 	    - Harpoon 1		(normal only)\
+Ctrl + j 	    - Harpoon 2		(normal only)\
+Ctrl + k 	    - Harpoon 3		(normal only)\
+Ctrl + l 	    - Harpoon 4		(normal only)\
 
 
-  h 	- Move cursor left
-  l 	- Move cursor right
-  k 	- Move cursor up
-  j 	- Move cursor down
+## Tmux
+Leader key is 'Ctrl + s'
 
-  x 	- Delete character
-  dd 	- Delete line operator
-
-  u 	- Undo previous action
-  U 	- Undo all actions on this line
-
-  I   - navigate to start of line and go into insert mode
-  w 	- Until the start of the next word, Excluding the first character.
-  e 	- To the end of the current word, Including the last character.
-  E 	- To the end of the line, Including the last character.
-  b   - jump backwards to the start of a word 
-  B   - jump backwards to the start of a line   
-  O   - Create a line above and go into insert mode
-  o   - Create a line below and go into insert mode
-
-Terminal
---------------------------
-<Alt>#	- Switch tab
-
-Arch
---------------------------
-<Alt-Tab>  - Switch program
-
-
+## Other
