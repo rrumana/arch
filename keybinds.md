@@ -9,7 +9,7 @@ Leader key is 'Super' (Command on Mac or Windows Key)
 ## Neovim
 Leader key is 'Space'
 
-```
+<code>&nbsp;
 <leader>pv      - Filetree
 <leader>pf      - Preview files
 <leader>ps      - Search files      (Grep)
@@ -23,7 +23,7 @@ Leader key is 'Space'
 <Ctrl-v> 	    - Put               (normal, insert, and visual)
 <Ctrl-r>	    - Redo              (normal and visual)
 <Ctrl-z> 	    - Undo              (normal and visual)
-```
+</code>
 
 # Vim
 [Operator] [Count] [Motion]
