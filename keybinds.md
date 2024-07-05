@@ -12,17 +12,17 @@ Leader key is 'Space'
 ```
 <leader>pv      - Filetree
 <leader>pf      - Preview files
-<leader>ps      - Search files 	    (Grep)
-<Ctrl-p>        - Github search 	(only works in github directory)
+<leader>ps      - Search files      (Grep)
+<Ctrl-p>        - Github search     (only works in github directory)
 
 <leader>x       - Clipboard cut 	(normal and visual)
 <leader>c       - Clipboard copy	(normal and visual)
 <leader>v       - Clipboard paste	(normal and visual)
-<Ctrl-x> 	    - Delete		    (normal and visual)
-<Ctrl-c> 	    - Yank		        (normal and visual)
-<Ctrl-v> 	    - Put		        (normal, insert, and visual)
-<Ctrl-r>	    - Redo		        (normal and visual)
-<Ctrl-z> 	    - Undo		        (normal and visual)
+<Ctrl-x>        - Delete		    (normal and visual)
+<Ctrl-c> 	    - Yank              (normal and visual)
+<Ctrl-v> 	    - Put               (normal, insert, and visual)
+<Ctrl-r>	    - Redo              (normal and visual)
+<Ctrl-z> 	    - Undo              (normal and visual)
 ```
 
 # Vim
