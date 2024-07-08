@@ -18,14 +18,14 @@ Leader key is 'Space'
 
 | Editing Keybind  | Description    |
 |------------------|----------------|
-| <leader>x        | Clipboard cut  |
-| <leader>c        | Clipboard copy |
-| <leader>v        | Clipboard paste|
-| <Ctrl-x>         | Delete         |
-| <Ctrl-c>         | Yank           |
-| <Ctrl-v>         | Put            |
-| <Ctrl-r>         | Redo           |
-| <Ctrl-z>         | Undo           |
+| \<leader\>x      | Clipboard cut  |
+| \<leader\>c      | Clipboard copy |
+| \<leader\>v      | Clipboard paste|
+| \<Ctrl-x\>       | Delete         |
+| \<Ctrl-c\>       | Yank           |
+| \<Ctrl-v\>       | Put            |
+| \<Ctrl-r\>       | Redo           |
+| \<Ctrl-z\>       | Undo           |
 
 ```
 <leader>pv&nbsp;- Filetree
