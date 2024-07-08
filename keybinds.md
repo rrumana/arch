@@ -5,6 +5,8 @@ Keybinds will be applied through the appropriate dotfiles, this is just a refere
 
 I am actually not a very good typist, and I have implemented all of these keybinds in the last few months, so this is a big challenge for me. Hopefully after a few more months of struggling I will be able to efficiently navigate my new setup.
 
+My goal is to refine these keybinds, like making new always \<leader\> n, rename always \<leader\> r, and so forth because that will greatly simplify the config since I only need to rememeber which application I am dealing with and apply the correct leader key. I just love piling new work on for myself.
+
 # Hyprland
 Leader key is 'Super' (Command on Mac or Windows Key)
 
@@ -65,9 +67,46 @@ Leader key for this section is 'Space'
 | O        | New line above |
 
 ## Tmux
+Tmux is completely new to my config as of the writing of this document. It might seem silly to keep piling on new keybinds when I am still learning the old ones, but there's no better way to learn than to jump off of the deep end right?
+
 Leader key is '\<Ctrl-s\>'
 
-| Keybind | Description |
-|---------|-------------|
+| Session Command | Description |
+|-----------------|-------------|
+| tmux            | Start tmux  |
+| tmux new -s     | Start new session by name |
+| tmux a          | Attatch session |
+| tmux a -t       | Attatch session by name |
+| tmux kill-ses   | Kill current session |
+| tmux kill-session -t | Kill session by name |
+| \<leader\> $    | Rename session |
+| \<leader\> D    | Detatch session |
+| \<leader\> )    | next session |
+| \<leader\> (    | previous sessions |
+
+
+| Window Keybind | Description |
+|----------------|-------------|
+| \<leader\>c    | Create window |
+| \<leader\>n    | Next window   |
+| \<leader\>p    | Previous window|
+| \<leader\>l    | Last window   |
+| \<leader\>0-9  | Switch to window 0-9 |
+| \<leader\>'    | Select windows by name |
+| \<leader\>.    | Change window number  |
+| \<leader\>,    | Rename window  |
+| \<leader\>F    | search windows        |
+| \<leader\>&    | Kill window  |
+
+| Pane Keybind   | Description |
+|----------------|-------------|
+| \<leader\>v    | Vertical split |
+| \<leader\>h    | Horizontal split|
+| \<leader\>h    | Move to pane to the right |
+| \<leader\>j    | Move down to pane |
+| \<leader\>k    | Move up to pane |
+| \<leader\>l    | Move to pane to the left  |
+| \<leader\>X    | Kill pane |
+
 
 ## Other
