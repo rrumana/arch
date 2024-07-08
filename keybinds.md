@@ -138,7 +138,7 @@ Leader key is '\<Ctrl-s\>'
 | \<leader\> j    | Move down to pane |
 | \<leader\> k    | Move up to pane |
 | \<leader\> l    | Move to pane to the left  |
-| \<leader\> X    | Kill pane |
+| \<leader\> x    | Kill pane |
 
 
 ## Other
