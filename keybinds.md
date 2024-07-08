@@ -9,7 +9,9 @@ I am actually not a very good typist, and I have implemented all of these keybin
 Leader key is 'Super' (Command on Mac or Windows Key)
 
 ## Neovim
-Leader key is 'Space'
+The following keybinds are all for my Neovim setup, which is losely based off of the Primeagen's config. He is an awesome creator and you should go check out his channel.
+
+Leader key for this section is 'Space'
 
 | Menu Keybind     | Description    |
 |------------------|----------------|
@@ -63,6 +65,9 @@ Leader key is 'Space'
 | O        | New line above |
 
 ## Tmux
-Leader key is 'Ctrl + s'
+Leader key is '\<Ctrl-s\>'
+
+| Keybind | Description |
+|---------|-------------|
 
 ## Other
