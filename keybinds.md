@@ -11,10 +11,10 @@ Leader key is 'Space'
 
 | Menu Keybind     | Description    |
 |------------------|----------------|
-| <leader>pv       | Filetree       |
-| <leader>pf       | Preview files  |
-| <leader>ps       | Search files   |
-| <Ctrl-p>         | Github search  |
+| \<leader\>pv     | Filetree       |
+| \<leader\>p      | Preview files  |
+| \<leader\>ps     | Search files   |
+| \<Ctrl-p\>       | Github search  |
 
 | Editing Keybind  | Description    |
 |------------------|----------------|
@@ -27,24 +27,23 @@ Leader key is 'Space'
 | \<Ctrl-r\>       | Redo           |
 | \<Ctrl-z\>       | Undo           |
 
-```
-<leader>pv&nbsp;- Filetree
-<leader>pf      - Preview files
-<leader>ps      - Search files      (Grep)
-<Ctrl-p>        - Github search     (only works in github directory)
-
-<leader>x       - Clipboard cut 	(normal and visual)
-<leader>c       - Clipboard copy	(normal and visual)
-<leader>v       - Clipboard paste	(normal and visual)
-<Ctrl-x>        - Delete		(normal and visual)
-<Ctrl-c> 	- Yank                  (normal and visual)
-<Ctrl-v> 	- Put                   (normal, insert, and visual)
-<Ctrl-r>	- Redo                  (normal and visual)
-<Ctrl-z> 	- Undo                  (normal and visual)
-```
-
 # Vim
 [Operator] [Count] [Motion]
+
+| Operator | Description |
+|----------|-------------|
+| i        | Insert       |
+| I        | Insert at start of line |
+| a        | Append       |
+| A        | Append at end of line |
+| w        | start of next word  |
+| e        | End of word  |
+| E        | End of line  |
+| b        | Start of word|
+| B        | Start of line|
+| o        | New line below |
+| O        | New line above |
+
 
 ```
 I   - navigate to start of line and go into insert mode
