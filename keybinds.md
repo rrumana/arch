@@ -12,19 +12,19 @@ Leader key is 'Super' (Command on Mac or Windows Key)
 
 | Hyprland Keybind | Description |
 |------------------|-------------|
-| \<leader\> T     | Alacritty   |
-| \<leader\> Q     | Kill window |
-| \<leader\> L     | Lock screen |
-| \<leader\> M     | Logout      |
-| \<leader\> SHIFT M | Force quit |
-| \<leader\> F     | Fullscreen  |
-| \<leader\> D     | Dolphin     |
-| \<leader\> V     | Toggle floating |
-| \<leader\> N     | Wofi        |
-| \<leader\> P     | Pseudo Dwindle     |
-| \<leader\> J     | Togglesplit Dwindle     |
-| \<leader\> S     | Screenshot  |
-| ALT V            | Clipboard manager |
+| \<leader\> t     | Alacritty   |
+| \<leader\> q     | Kill window |
+| \<leader\> l     | Lock screen |
+| \<leader\> m     | Logout      |
+| \<leader\> M     | Force quit |
+| \<leader\> f     | Fullscreen  |
+| \<leader\> d     | Dolphin     |
+| \<leader\> v     | Toggle floating |
+| \<leader\> n     | Wofi        |
+| \<leader\> p     | Pseudo Dwindle     |
+| \<leader\> j     | Togglesplit Dwindle     |
+| \<leader\> s     | Screenshot  |
+| \<ALT\> v        | Clipboard manager |
 
 | Move & Focus  Keybind | Description |
 |-----------------------|-------------|
