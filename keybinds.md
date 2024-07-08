@@ -9,6 +9,24 @@ Leader key is 'Super' (Command on Mac or Windows Key)
 ## Neovim
 Leader key is 'Space'
 
+| Menu Keybind     | Description    |
+|------------------|----------------|
+| <leader>pv       | Filetree       |
+| <leader>pf       | Preview files  |
+| <leader>ps       | Search files   |
+| <Ctrl-p>         | Github search  |
+
+| Editing Keybind  | Description    |
+|------------------|----------------|
+| <leader>x        | Clipboard cut  |
+| <leader>c        | Clipboard copy |
+| <leader>v        | Clipboard paste|
+| <Ctrl-x>         | Delete         |
+| <Ctrl-c>         | Yank           |
+| <Ctrl-v>         | Put            |
+| <Ctrl-r>         | Redo           |
+| <Ctrl-z>         | Undo           |
+
 ```
 <leader>pv&nbsp;- Filetree
 <leader>pf      - Preview files
