@@ -10,7 +10,7 @@ Leader key is 'Super' (Command on Mac or Windows Key)
 Leader key is 'Space'
 
 ```
-<leader>pv      - Filetree
+<leader>pv&nbsp;- Filetree
 <leader>pf      - Preview files
 <leader>ps      - Search files      (Grep)
 <Ctrl-p>        - Github search     (only works in github directory)
