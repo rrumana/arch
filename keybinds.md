@@ -49,16 +49,16 @@ Leader key for this section is 'Space'
 
 | Menu Keybind     | Description    |
 |------------------|----------------|
-| \<leader\>pv     | Filetree       |
-| \<leader\>p      | Preview files  |
-| \<leader\>ps     | Search files   |
+| \<leader\> pv    | Filetree       |
+| \<leader\> pf    | Preview files  |
+| \<leader\> ps    | Search files   |
 | \<Ctrl-p\>       | Github search  |
 
 | Editing Keybind  | Description    |
 |------------------|----------------|
-| \<leader\>x      | Clipboard cut  |
-| \<leader\>c      | Clipboard copy |
-| \<leader\>v      | Clipboard paste|
+| \<leader\> x     | Clipboard cut  |
+| \<leader\> c     | Clipboard copy |
+| \<leader\> v     | Clipboard paste|
 | \<Ctrl-x\>       | Delete         |
 | \<Ctrl-c\>       | Yank           |
 | \<Ctrl-v\>       | Put            |
@@ -74,7 +74,7 @@ Leader key for this section is 'Space'
 
 | Harpoon Keybind | Description |
 |-----------------|-------------|
-| \<leader\>a     | Harpoon mark |
+| \<leader\> a    | Harpoon mark |
 | \<Ctrl-e\>      | Harpoon UI   |
 | \<Ctrl-h\>      | Harpoon 1    |
 | \<Ctrl-j\>      | Harpoon 2    |
@@ -119,26 +119,29 @@ Leader key is '\<Ctrl-s\>'
 
 | Window Keybind | Description |
 |----------------|-------------|
-| \<leader\>c    | Create window |
-| \<leader\>n    | Next window   |
-| \<leader\>p    | Previous window|
-| \<leader\>l    | Last window   |
-| \<leader\>0-9  | Switch to window 0-9 |
-| \<leader\>'    | Select windows by name |
-| \<leader\>.    | Change window number  |
-| \<leader\>,    | Rename window  |
-| \<leader\>F    | search windows        |
-| \<leader\>&    | Kill window  |
+| \<leader\> c    | Create window |
+| \<leader\> n    | Next window   |
+| \<leader\> p    | Previous window|
+| \<leader\> l    | Last window   |
+| \<leader\> 0-9  | Switch to window 0-9 |
+| \<leader\> '    | Select windows by name |
+| \<leader\> .    | Change window number  |
+| \<leader\> ,    | Rename window  |
+| \<leader\> F    | search windows        |
+| \<leader\> &    | Kill window  |
 
 | Pane Keybind   | Description |
 |----------------|-------------|
-| \<leader\>v    | Vertical split |
-| \<leader\>h    | Horizontal split|
-| \<leader\>h    | Move to pane to the right |
-| \<leader\>j    | Move down to pane |
-| \<leader\>k    | Move up to pane |
-| \<leader\>l    | Move to pane to the left  |
-| \<leader\>X    | Kill pane |
+| \<leader\> v    | Vertical split |
+| \<leader\> h    | Horizontal split|
+| \<leader\> h    | Move to pane to the right |
+| \<leader\> j    | Move down to pane |
+| \<leader\> k    | Move up to pane |
+| \<leader\> l    | Move to pane to the left  |
+| \<leader\> X    | Kill pane |
 
 
 ## Other
+
+Other keybinds will be added here in the future. This is probably enough to learn for now
+
