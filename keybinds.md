@@ -10,6 +10,38 @@ My goal is to refine these keybinds, like making new always \<leader\> n, rename
 # Hyprland
 Leader key is 'Super' (Command on Mac or Windows Key)
 
+| Hyprland Keybind | Description |
+|------------------|-------------|
+| \<leader\> T     | Alacritty   |
+| \<leader\> Q     | Kill window |
+| \<leader\> L     | Lock screen |
+| \<leader\> M     | Logout      |
+| \<leader\> SHIFT M | Force quit |
+| \<leader\> F     | Fullscreen  |
+| \<leader\> D     | Dolphin     |
+| \<leader\> V     | Toggle floating |
+| \<leader\> N     | Wofi        |
+| \<leader\> P     | Pseudo Dwindle     |
+| \<leader\> J     | Togglesplit Dwindle     |
+| \<leader\> S     | Screenshot  |
+| ALT V            | Clipboard manager |
+
+| Move & Focus  Keybind | Description |
+|-----------------------|-------------|
+| \<leader\> l          | Move focus left |
+| \<leader\> r          | Move focus right | 
+| \<leader\> u          | Move focus up |
+| \<leader\> d          | Move focus down |
+| \<leader\> 1-10       | Move focus to workspace 1-10 |
+| \<leader\> SHIFT 1-10 | Move window to workspace 1-10 |
+
+| Mouse Keybind | Description |
+|---------------|-------------|
+| \<leader\> mouse_down | Go up one workspace |
+| \<leader\> mouse_up   | Go down one workspace |
+| \<leader\> mouse_left | Move window |
+| \<leader\> mouse_right| Resize window |
+
 ## Neovim
 The following keybinds are all for my Neovim setup, which is losely based off of the Primeagen's config. He is an awesome creator and you should go check out his channel.
 
