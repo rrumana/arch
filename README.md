@@ -27,23 +27,24 @@ fastfetch cause why not
 ```
 
                   -`                     ┌─────────── Hardware Information ───────────┐
-                 .o+`                      󰌢  82UG (Legion S7 16ARHA7)
-                `ooo/                      󰻠  AMD Ryzen 9 6900HX (16) @ 5.17 GHz
-               `+oooo:                     󰍛  AMD Radeon RX 6800S [Discrete]
-              `+oooooo:                    󰍛  AMD Radeon 680M @ 2.60 GHz [Integrated]
-              -+oooooo+:                     1.09 TiB / 1.82 TiB (60%) - btrfs
-            `/:-:++oooo+:                  󰑭  4.39 GiB / 34.92 GiB (13%)
-           `/++++/+++++++:                 󰓡  0 B / 4.00 GiB (0%)
-          `/++++++++++++++:                󰍹  3840x2160 @ 70Hz (as 3072x1728)
-         `/+++ooooooooooooo/`              󰍹  3840x2160 @ 60Hz (as 3072x1728)
-        ./ooosssso++osssssso+`             󰍹  2560x1600 @ 165Hz (as 1928x1205) [Built-in]
-       .oossssso-````/ossssss+`          ├─────────── Software Information ───────────┤
-      -osssssso.      :ssssssso.             Arch Linux x86_64
-     :osssssss/        osssso+++.            Linux 6.9.7-zen1-1-zen
-    /ossssssss/        +ssssooo/-            Hyprland (Wayland)
-  `/ossssso+/:-        -:/+osssso+-          zsh 5.9
- `+sso+:-`                 `.-/+oso:         konsole 24.5.1
-`++:.                           `-/+/      󰏖  1065 (pacman)
-.`                                 `/      󰅐  32 mins
+                 .o+`                      󰌢   82UG (Legion S7 16ARHA7)
+                `ooo/                      󰻠   AMD Ryzen 9 6900HX (16) @ 5.17 GHz
+               `+oooo:                     󰍛   AMD Radeon RX 6800S [Discrete]
+              `+oooooo:                    󰍛   AMD Radeon 680M [Integrated]
+              -+oooooo+:                      1.88 TiB / 3.60 TiB (52%) - btrfs
+            `/:-:++oooo+:                  󰑭   6.66 GiB / 34.92 GiB (19%)
+           `/++++/+++++++:                 󰓡   4.36 GiB / 35.76 GiB (12%)
+          `/++++++++++++++:                󰍹   2560x1440 @ 240 Hz in 27" [External]
+         `/+++ooooooooooooo/`              󰍹   2560x1600 @ 165 Hz (as 1928x1205) in 16" [Built-in]
+        ./ooosssso++osssssso+`           ├─────────── Software Information ───────────┤
+       .oossssso-````/ossssss+`            󰣇   Arch Linux x86_64
+      -osssssso.      :ssssssso.           󰌢   Linux 6.11.6-zen1-1-zen
+     :osssssss/        osssso+++.             Hyprland (Wayland)
+    /ossssssss/        +ssssooo/-             zsh 5.9
+  `/ossssso+/:-        -:/+osssso+-           tmux 3.5a
+ `+sso+:-`                 `.-/+oso:       󰏖   971 (pacman)
+`++:.                           `-/+/      󰅐   1 day, 8 hours, 33 mins
+.`                                 `/      󰩟   192.168.1.11/24
                                          └────────────────────────────────────────────┘
+
 ```
