@@ -1,0 +1,57 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 25,
+    "modules-left": [
+        "custom/launch_wofi",
+        "custom/launch_firefox",
+        "custom/launch_konsole",
+        "custom/launch_dolphin"
+    ],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["custom/weather"],
+
+    "include": [
+        "~/.config/HyprV/waybar/conf/mesu.jsonc"
+    ],
+
+    "custom/launch_firefox": {
+        "format": "",
+        "on-click": "firefox",
+        "tooltip": false
+    },
+
+    "custom/launch_dolphin": {
+        "format": "",
+        "on-click": "exec thunar",
+        "tooltip": false
+    },
+
+    "custom/launch_konsole": {
+        "format": "",
+        "on-click": "exec ghostty",
+        "tooltip": false
+    },
+    
+    "custom/launch_wofi": {
+        "format": "󱗼",
+        "on-click": "sh -c '(sleep 0.5s; pkill wofi || wofi -c ~/.config/HyprV/wofi/config-lmenu)' & disown",
+        "tooltip": false
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        "all-outputs": true,
+        "tooltip-format": "{name} - {title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "wofi"
+        ],
+    }
+}
