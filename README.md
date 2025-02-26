@@ -1,7 +1,5 @@
 # Arch
 
-test
-
 A repository containing everything related to my personal Arch setup
 
 My laptop finally bit the dust (RIP) taking all my data with it...
