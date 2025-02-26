@@ -2,13 +2,11 @@
 
 A repository containing everything related to my personal Arch setup
 
-My laptop it terribly unstable (Curse you Lenovo) so this repo is mainly for me to document my setup as it evolves and make install scripts so that when I eventually have to reinstall everything it goes much quicker.
+My laptop finally bit the dust (RIP) taking all my data with it...
 
-photos, dotfiles, and install script hopefully on the way
+A great opportunity to redesign the whole thing!
 
-I use Neovim as my text editor and I have a separate repo for that [here](https://github.com/rrumana/Neovim) 
-
-I also will be adding my keybinds for everything in one file (for my reference and yours)
+I'll be adding more shortly.
 
 fastfetch cause why not
 ```
