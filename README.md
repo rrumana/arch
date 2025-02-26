@@ -11,27 +11,25 @@ I'll be adding more shortly.
 fastfetch cause why not
 ```
 
-                  -`                     ┌─────────── Hardware Information ───────────┐
-                 .o+`                      󰌢   82UG (Legion S7 16ARHA7)
-                `ooo/                      󰻠   AMD Ryzen 9 6900HX (16) @ 5.17 GHz
-               `+oooo:                     󰍛   AMD Radeon RX 6800S [Discrete]
-              `+oooooo:                    󰍛   AMD Radeon 680M [Integrated]
-              -+oooooo+:                      2.09 TiB / 3.60 TiB (58%) - btrfs
-            `/:-:++oooo+:                  󰑭   11.02 GiB / 34.92 GiB (32%)
-           `/++++/+++++++:                 󰓡   2.37 GiB / 35.76 GiB (7%)
-          `/++++++++++++++:                󰍹   2560x1440 @ 120 Hz in 27" [External]
-         `/+++ooooooooooooo/`              󰍹   2560x1600 @ 165 Hz (as 1928x1205) in 16" [Built-in]
-        ./ooosssso++osssssso+`           ├─────────── Software Information ───────────┤
-       .oossssso-````/ossssss+`            󰣇   Arch Linux x86_64
-      -osssssso.      :ssssssso.           󰌢   Linux 6.12.9-zen1-1-zen
-     :osssssss/        osssso+++.             Hyprland 0.46.0-117-g25add2688 (Wayland)
-    /ossssssss/        +ssssooo/-             zsh 5.9
-  `/ossssso+/:-        -:/+osssso+-           tmux 3.5a
- `+sso+:-`                 `.-/+oso:       󰏖   948 (pacman)
-`++:.                           `-/+/      󰅐   1 day, 1 hour, 22 mins
-.`                                 `/      󰝚   Dragonforce - Through the Fire and Flames
-                                           󰩟   192.168.1.11/24
-                                         └────────────────────────────────────────────┘
+                 -`                     ┌─────────── Hardware Information ───────────┐
+                 .o+`                      󰌢  EliteMini Series (Version 1.0)
+                `ooo/                      󰻠  AMD Ryzen AI 9 HX 370 (24) @ 5.16 GHz
+               `+oooo:                     󰍛  AMD Radeon 880M / 890M [Integrated]
+              `+oooooo:                      2.50 TiB / 3.61 TiB (69%) - btrfs
+              -+oooooo+:                   󰑭  8.67 GiB / 27.01 GiB (32%)
+            `/:-:++oooo+:                  󰓡  2.30 GiB / 32.00 GiB (7%)
+           `/++++/+++++++:                 󰍹  2560x1440 @ 120 Hz in 27" [External]
+          `/++++++++++++++:              ├─────────── Software Information ───────────┤
+         `/+++ooooooooooooo/`              󰣇  Arch Linux x86_64
+        ./ooosssso++osssssso+`               Linux 6.13.4-zen1-1-zen
+       .oossssso-````/ossssss+`              Hyprland 0.47.0-101-gf0850905 (Wayland)
+      -osssssso.      :ssssssso.             bash 5.2.37
+     :osssssss/        osssso+++.            ghostty 1.1.2-arch
+    /ossssssss/        +ssssooo/-          󰏖  801 (pacman)
+  `/ossssso+/:-        -:/+osssso+-        󰅐  1 day, 46 mins
+ `+sso+:-`                 `.-/+oso:       󰩟  192.168.1.11/24
+`++:.                           `-/+/    └────────────────────────────────────────────┘
+.`                                 `/
 
 
 ```
