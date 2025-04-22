@@ -1,0 +1,6 @@
+[Unit]
+Description=Take read-only Btrfs daily snapshots of root, home, var, tmp
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/auto-btrfs-snapshot-daily.sh

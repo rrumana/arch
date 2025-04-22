@@ -1,0 +1,10 @@
+[Unit]
+Description=Monthly Btrfs balance
+
+[Timer]
+# first day of each month at 4:00 AM
+OnCalendar=monthly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

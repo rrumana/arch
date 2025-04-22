@@ -1,0 +1,6 @@
+[Unit]
+Description=Take read-only Btrfs weekly snapshots of media
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/auto-btrfs-snapshot-weekly.sh

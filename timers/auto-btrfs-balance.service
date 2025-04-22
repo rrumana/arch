@@ -1,0 +1,11 @@
+[Unit]
+Description=Btrfs balance of /
+Documentation=man:btrfs(8)
+# never run scrub at the same time
+Conflicts=auto-btrfs-scrub.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/btrfs balance start -dusage=5 /
+StandardOutput=journal
+StandardError=journal
