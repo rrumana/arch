@@ -1,165 +1,178 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# ===========================
-# User Input & Validation
-# ===========================
-read -p "Enter preferred username: " USERNAME
-if [[ -z "$USERNAME" ]]; then
-    echo "Username is required. Exiting..."
-    exit 1
-fi
+#===========================
+#      PARAMETERS
+#===========================
+EFI_SIZE_MB=512                  # EFI partition size
+DEFAULT_SWAP_MB=32768            # default swap size
+SUBVOLS=(root home var tmp media snapshots)
+MOUNT_OPTS="compress=zstd,space_cache=v2,discard=async"
+TIMERS=(auto-btrfs-balance auto-btrfs-scrub auto-btrfs-snapshot-daily auto-btrfs-snapshot-weekly)
+BASE_PKGS=(base base-devel linux-zen linux-zen-headers linux-firmware vim git networkmanager)
 
-read -p "Enter hostname: " HOSTNAME
-if [[ -z "$HOSTNAME" ]]; then
-    echo "Hostname is required. Exiting..."
-    exit 1
-fi
+#===========================
+#     USER PROMPTS
+#===========================
+ask_user() {
+  read -p "Enter preferred username: " USERNAME
+  [[ -z "$USERNAME" ]] && { echo "Username required."; exit 1; }
 
-read -p "Enter target disk (e.g. /dev/sda): " DISK
-if [[ ! -b "$DISK" ]]; then
-    echo "Disk ${DISK} not found or is not a block device. Exiting..."
-    exit 1
-fi
+  read -p "Enter hostname: " HOSTNAME
+  [[ -z "$HOSTNAME" ]] && { echo "Hostname required."; exit 1; }
 
-read -p "Enter your desired swap size in MB (default: 32768): " SWAP_SIZE
-if [[ -z "$SWAP_SIZE" ]]; then
-    SWAP_SIZE=32768
-fi
+  read -p "Enter target disk (e.g. /dev/nvme0n1): " DISK
+  [[ ! -b "$DISK" ]] && { echo "Block device $DISK not found."; exit 1; }
 
-SWAP_END=$((512 + SWAP_SIZE + 1))
+  read -p "Swap size in MB [${DEFAULT_SWAP_MB}]: " SWAP_MB
+  SWAP_MB=${SWAP_MB:-$DEFAULT_SWAP_MB}
+  # calculate end (EFI + swap + 1MiB gap)
+  SWAP_END_MB=$(( EFI_SIZE_MB + SWAP_MB + 1 ))
 
-read -p "Enter your desired user password: " -s PASSWORD
-if [[ -z "$PASSWORD" ]]; then
-    echo "Password is required. Exiting..."
-    exit 1
-fi
+  read -s -p "User password: " PASSWORD; echo
+  [[ -z "$PASSWORD" ]] && { echo "Password required."; exit 1; }
 
-read -p "Enter your desired root password: " -s ROOT_PASSWORD
-if [[ -z "$ROOT_PASSWORD" ]]; then
-    echo "Root password is required. Exiting..."
-    exit 1
-fi
+  read -s -p "Root password: " ROOT_PASSWORD; echo
+  [[ -z "$ROOT_PASSWORD" ]] && { echo "Root password required."; exit 1; }
 
-read -p "Enter your timezone (e.g. America/New_York): " TIMEZONE
-if [[ -z "$TIMEZONE" ]]; then
-    echo "Timezone is required. Exiting..."
-    exit 1
-fi
-if [[ ! -f "/usr/share/zoneinfo/$TIMEZONE" ]]; then
-    echo "Timezone ${TIMEZONE} not found. Exiting..."
-    exit 1
-fi
+  read -p "Timezone (e.g. America/New_York): " TIMEZONE
+  [[ -z "$TIMEZONE" ]] && { echo "Timezone required."; exit 1; }
+  [[ ! -f "/usr/share/zoneinfo/${TIMEZONE}" ]] && { echo "Timezone $TIMEZONE not found."; exit 1; }
+}
 
-# ===========================
-# Partitioning and Formatting
-# ===========================
-echo "Partitioning disk ${DISK}..."
-parted "$DISK" --script mklabel gpt
-parted "$DISK" --script mkpart EFI fat32 1MiB 513MiB
-parted "$DISK" --script set 1 esp on
-parted "$DISK" --script mkpart swap linux-swap 513MiB "${SWAP_END}MiB"
-parted "$DISK" --script mkpart primary btrfs "${SWAP_END}MiB" 100%
+#===========================
+#   DISK PARTITIONING
+#===========================
+partition_disk() {
+  echo "→ Partitioning $DISK"
+  parted "$DISK" --script mklabel gpt
+  parted "$DISK" --script mkpart EFI fat32 1MiB $((EFI_SIZE_MB+1))MiB
+  parted "$DISK" --script set 1 esp on
+  parted "$DISK" --script mkpart swap linux-swap $((EFI_SIZE_MB+1))MiB ${SWAP_END_MB}MiB
+  parted "$DISK" --script mkpart primary btrfs ${SWAP_END_MB}MiB 100%
+}
 
-echo "Formatting partitions..."
-mkfs.fat -F32 "${DISK}1"
-mkswap "${DISK}2"
-mkfs.btrfs -f "${DISK}3"
+#===========================
+#   FORMAT & BTRFS SETUP
+#===========================
+setup_btrfs() {
+  echo "→ Formatting"
+  mkfs.fat -F32 "${DISK}1"
+  mkswap     "${DISK}2"
+  mkfs.btrfs -f "${DISK}3"
+  swapon "${DISK}2"
 
-echo "Activating swap..."
-swapon "${DISK}2"
+  echo "→ Creating subvolumes"
+  mount -o subvolid=5 "${DISK}3" /mnt
+  for sv in "${SUBVOLS[@]}"; do
+    btrfs subvolume create /mnt/@${sv}
+  done
+  umount /mnt
 
-echo "Creating btrfs subvolume..."
-mount -o subvolid=5 "${DISK}3" /mnt
-btrfs subvolume create /mnt/@
-umount /mnt
+  echo "→ Mounting subvolumes + EFI"
+  mount -o subvol=@root,$MOUNT_OPTS "${DISK}3" /mnt
+  mkdir -p /mnt/{home,var,tmp,media,.snapshots,boot/efi}
+  for sv in "${SUBVOLS[@]:1}"; do
+    mount -o subvol=@${sv},$MOUNT_OPTS "${DISK}3" /mnt/${sv}
+  done
+  mount "${DISK}1" /mnt/boot/efi
+}
 
-echo "Mounting in preparation for installation..."
-mount -o compress=zstd,subvol=@ "${DISK}3" /mnt
-mkdir -p /mnt/boot/efi
-mount "${DISK}1" /mnt/bootefi
+#===========================
+#  BASE INSTALL & FSTAB
+#===========================
+install_base() {
+  echo "→ Installing base system"
+  pacstrap /mnt "${BASE_PKGS[@]}"
+  echo "→ Generating /etc/fstab"
+  genfstab -U /mnt >> /mnt/etc/fstab
+}
 
-# ===========================
-# Base System Installation
-# ===========================
-echo "Installing base system..."
-pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware vim git networkmanager
-
-echo "Generating fstab..."
-genfstab -U /mnt >> /mnt/etc/fstab
-
-echo "Copying pkglist.txt to /mnt/root..."
-if [[ -f ./pkglist.txt ]]; then
-    cp ./pkglist.txt /mnt/root/pkglist.txt
-else
-    echo "pkglist.txt not found in the current directory. Exiting..."
-    exit 1
-fi
-
-# ===========================
-# Chroot: System Configuration & User Setup
-# ===========================
-arch-chroot /mnt /bin/bash -e <<EOF
+#===========================
+#      IN-CHROOT CONFIG
+#===========================
+configure_chroot() {
+  arch-chroot /mnt /bin/bash -e <<EOF
+# — Localization
 ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 hwclock --systohc
-
-echo "${HOSTNAME}" > /etc/hostname
-
-cat <<EOL > /etc/hosts
-127.0.0.1    localhost
-::1          localhost
-127.0.1.1    ${HOSTNAME}.localdomain ${HOSTNAME}
-EOL
-
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
-echo "root:${ROOT_PASSWORD}" | chpasswd
+# — Hostname
+echo "${HOSTNAME}" > /etc/hostname
+cat > /etc/hosts <<H
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   ${HOSTNAME}.localdomain ${HOSTNAME}
+H
 
+# — Users & passwords
+echo "root:${ROOT_PASSWORD}" | chpasswd
 useradd -m -G wheel -s /bin/bash ${USERNAME}
 echo "${USERNAME}:${PASSWORD}" | chpasswd
 sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
-echo "Installing paru as user ${USERNAME}..."
-sudo -u ${USERNAME} bash -c '
-cd /home/${USERNAME} || exit 1
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-'
+# — GRUB for UEFI
+pacman -S --noconfirm grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "Installing packages from pkglist.txt..."
-mv /root/pkglist.txt /home/${USERNAME}/pkglist.txt
-sudo -u ${USERNAME} bash -c '
-paru -S --needed --noconfirm - < /home/${USERNAME}/pkglist.txt
-'
+# — Clone your repo & deploy configs
+git clone https://github.com/rrumana/arch.git /root/arch
 
-echo "Setting up dotfiles..."
-# Clone your dotfiles repository. Replace the URL with your actual repository.
-sudo -u ${USERNAME} bash -c '
-git clone https://github.com/yourusername/dotfiles.git /home/${USERNAME}/dotfiles
-'
+# dotfiles → ~/.config
+mkdir -p /home/${USERNAME}/.config
+cp -r /root/arch/dotfiles/* /home/${USERNAME}/.config/
+chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.config
 
-# Copy dotfiles and .config folder.
-cp /home/${USERNAME}/dotfiles/.bashrc /home/${USERNAME}/.bashrc
-cp /home/${USERNAME}/dotfiles/.tmux.conf /home/${USERNAME}/.tmux.conf
-rsync -av /home/${USERNAME}/dotfiles/.config/ /home/${USERNAME}/.config/
+# home-dotfiles → ~
+rsync -av /root/arch/home/ /home/${USERNAME}/
+chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
 
-# Place wallpapers in Pictures directory if available.
+# wallpapers → ~/Pictures/wallpapers
 mkdir -p /home/${USERNAME}/Pictures/wallpapers
-if [ -d /home/${USERNAME}/dotfiles/wallpapers ]; then
-    rsync -av /home/${USERNAME}/dotfiles/wallpapers/ /home/${USERNAME}/Pictures/wallpapers/
+cp -r /root/arch/wallpapers/* /home/${USERNAME}/Pictures/wallpapers/
+chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/Pictures/wallpapers
+
+# — paru & PKG LIST
+sudo -u ${USERNAME} bash -c '
+  git clone https://aur.archlinux.org/paru.git /home/${USERNAME}/paru
+  cd /home/${USERNAME}/paru
+  makepkg -si --noconfirm
+'
+if [[ ! -f /root/arch/package_list.txt ]]; then
+  echo "ERROR: package_list.txt missing!" >&2
+  exit 1
 fi
+sudo -u ${USERNAME} bash -c '
+  paru -S --needed --noconfirm - < /root/arch/package_list.txt
+'
 
-systemctl enable NetworkManager
-systemctl enable cups
-systemctl enable bluetooth
-systemctl enable containerd
+# — Timers/Services
+cp /root/arch/timers/* /etc/systemd/system/
+systemctl daemon-reload
+for t in ${TIMERS[*]}; do
+  systemctl enable --now "\${t}.timer"
+done
 
+# — Core services
+systemctl enable NetworkManager containerd cups bluetooth
 EOF
+}
 
-# ===========================
-# Final Message
-# ===========================
-echo "Installation complete. You can now exit chroot and reboot into your new system."
+#===========================
+#         MAIN
+#===========================
+main() {
+  ask_user
+  partition_disk
+  setup_btrfs
+  install_base
+  configure_chroot
+  echo "✅ All done! Exit, reboot, and enjoy your new Arch system."
+}
+
+main "$@"
+
