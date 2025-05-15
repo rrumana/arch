@@ -14,6 +14,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_STYLE_OVERRIDE="qt5ct"
 alias osu-lazer='DRI_PRIME=1 osu-lazer'
 
+eval "$(starship init bash)"
 eval $(ssh-agent)
 ssh-add ~/.ssh/id_ed25519
 clear
